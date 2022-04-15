@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		int N = strtol(argv[2],NULL,10);
-		if ((errno != ERANGE) || (errno != EINVAL))
+		if ((errno != ERANGE) && (errno != EINVAL) && (*endptr == '\0') && (N >= 0))
 		{
 			int op;	
 			if (op = open(argv[1], O_RDONLY)) 
