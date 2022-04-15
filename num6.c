@@ -4,6 +4,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <dirent.h>
+#include <unistd.h>
 
 int main(void)
 {
