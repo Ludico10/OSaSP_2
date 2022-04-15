@@ -7,8 +7,8 @@
 
 int main(void)
 {
-	char dir[1024];
-	if (getcwd(dir, 1024) == 0)  perror("getcwd() ");
+	char dir[PATH_MAX];
+	if (getcwd(dir, PATH_MAX) == 0)  perror("getcwd() ");
 	else 
 	{
 		struct dirent *memb;
