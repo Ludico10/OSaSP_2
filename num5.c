@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 				char ch = getc(f1);
 				while (ch != EOF) 
 				{
-					if (putc(ch,f2)==EOF)  fprintf(stderr,"Writing character error\n");
+					if (putc(ch,f2) == EOF)  fprintf(stderr,"Writing character error\n");
 					ch = getc(f1);
 				}	
 				struct stat buf;
