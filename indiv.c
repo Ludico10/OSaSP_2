@@ -36,9 +36,9 @@ int Searcher(char* sch_d, char* sch_f, int* cnt_d, int* cnt_f)
 	            			{
 	            				char str[128];
 						struct tm lt;
-						localtime_r(&buf->st_mtime,&lt);
+						localtime_r(&buf.st_mtime,&lt);
 						strftime(str, 128, "%d %b %Y", &lt);				
-						fprintf(stdout, "%s %ld %lo %ld %s\n", path, buf->st_size, (unsigned long)buf->st_mode,(long)buf->st_ino, str);
+						fprintf(stdout, "%s %ld %lo %ld %s\n", path, buf.st_size, (unsigned long)buf.st_mode,(long)buf.st_ino, str);
 	            			}	
 	            			else perror("stat() ");			
 				}
