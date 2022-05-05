@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		int N = strtol(argv[2],NULL,10);
-		if ((errno != ERANGE) && (errno != EINVAL) && (*endptr == '\0') && (N >= 0))
+		if ((errno != ERANGE) && (errno != EINVAL) && (*endptr == '\0') && (N >= 0) && (strlen(argv[2]) != 0))
 		{
 			int op;	
 			if (op = open(argv[1], O_RDONLY)) 
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 			}	
 			else perror("open() ");
 		}
-		else perror("strtol() ");
+		else fprintf(stderr, "Wrong 2 parameter\n");
 	}
 	return 0;
 }
